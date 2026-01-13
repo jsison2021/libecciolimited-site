@@ -1,65 +1,208 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import Pillars from "@/components/Pillars";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Hero />
+      <Pillars />
+
+      {/* Louisville Section */}
+      <section className="py-32 relative overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop')`,
+            }}
+          ></div>
+          <div className="absolute inset-0 bg-navy-dark/90"></div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Decorative elements */}
+        <div className="glow-orb glow-orb-emerald w-96 h-96 -top-20 right-1/4 opacity-20"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Image Card */}
+            <div className="relative order-2 lg:order-1">
+              <div className="glass-card overflow-hidden">
+                <div
+                  className="h-80 lg:h-[450px] bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=2096&auto=format&fit=crop')`,
+                  }}
+                ></div>
+              </div>
+              {/* Floating stat card */}
+              <div className="absolute -bottom-6 -right-6 glass-emerald p-6 rounded-2xl">
+                <div className="text-4xl font-bold text-white mb-1">Louisville</div>
+                <div className="text-white/80 text-sm">Kentucky • Est. 1778</div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="order-1 lg:order-2">
+              <div className="inline-block glass px-4 py-2 rounded-full mb-6">
+                <span className="text-emerald text-sm font-semibold tracking-wider uppercase">
+                  Our Home
+                </span>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+                Rooted in <span className="text-gradient">Louisville</span>
+              </h2>
+
+              <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                Louisville is more than our headquarters—it&apos;s our home. We
+                understand the unique character of our neighborhoods, the pulse
+                of our markets, and the needs of our community.
+              </p>
+
+              <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                Our local expertise and deep market knowledge allow us to
+                identify opportunities others miss and create value where others
+                see challenges.
+              </p>
+
+              {/* Features */}
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {[
+                  "Local Market Expertise",
+                  "Community Focused",
+                  "Strategic Locations",
+                  "Growth Oriented",
+                ].map((feature) => (
+                  <div key={feature} className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-emerald"></div>
+                    <span className="text-gray-300 text-sm">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <Link href="/about" className="btn-glass inline-flex items-center gap-2">
+                Learn Our Story
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-navy-dark/30"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+              Why <span className="text-gradient">Choose Us</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Partner with a team that combines local expertise with professional excellence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                ),
+                title: "Swift Execution",
+                description: "We move quickly on opportunities, ensuring you never miss a deal.",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                ),
+                title: "Trusted Partner",
+                description: "Built on integrity and transparency in every transaction.",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                ),
+                title: "Expert Team",
+                description: "Seasoned professionals with deep industry knowledge.",
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                ),
+                title: "Proven Results",
+                description: "Track record of successful investments and satisfied clients.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="glass-card p-8 text-center group">
+                <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-emerald/20 flex items-center justify-center text-emerald group-hover:bg-emerald/30 transition-colors">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-serif font-bold text-white mb-3">{item.title}</h3>
+                <p className="text-gray-400 text-sm">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-32 relative overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')`,
+            }}
+          ></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/95 to-navy-dark/80"></div>
+        </div>
+
+        {/* Decorative */}
+        <div className="glow-orb glow-orb-emerald w-[600px] h-[600px] -bottom-40 -right-40 opacity-30"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-block glass-emerald px-4 py-2 rounded-full mb-6">
+              <span className="text-white text-sm font-semibold tracking-wider uppercase">
+                Get Started
+              </span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
+              Ready to Build Your
+              <span className="text-gradient block mt-2">Real Estate Legacy?</span>
+            </h2>
+
+            <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+              Whether you&apos;re looking to invest, develop, or need professional
+              property management, we&apos;re here to help you succeed.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn-emerald text-lg">
+                Start a Conversation
+              </Link>
+              <Link href="/about" className="btn-glass text-lg">
+                Learn More About Us
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
