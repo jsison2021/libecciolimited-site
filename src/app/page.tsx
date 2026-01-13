@@ -9,11 +9,11 @@ export default function Home() {
       <Pillars />
 
       {/* Louisville Section */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="snap-section py-20 sm:py-32 relative overflow-hidden flex items-center">
         {/* Background */}
         <div className="absolute inset-0">
           <div
-            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            className="absolute inset-0 bg-cover bg-center lg:bg-fixed"
             style={{
               backgroundImage: `url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop')`,
             }}
@@ -37,9 +37,9 @@ export default function Home() {
                 ></div>
               </div>
               {/* Floating stat card */}
-              <div className="absolute -bottom-6 -right-6 glass-emerald p-6 rounded-2xl">
-                <div className="text-4xl font-bold text-white mb-1">Louisville</div>
-                <div className="text-white/80 text-sm">Kentucky • Est. 1778</div>
+              <div className="absolute -bottom-4 right-2 sm:-bottom-6 sm:-right-6 bg-navy-dark border border-emerald/50 p-4 sm:p-6 rounded-2xl">
+                <div className="text-2xl sm:text-4xl font-bold text-white mb-1">Louisville</div>
+                <div className="text-emerald text-xs sm:text-sm">Kentucky • Est. 1778</div>
               </div>
             </div>
 
@@ -93,73 +93,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background to-navy-dark/30"></div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-              Why <span className="text-gradient">Choose Us</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Partner with a team that combines local expertise with professional excellence.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                ),
-                title: "Swift Execution",
-                description: "We move quickly on opportunities, ensuring you never miss a deal.",
-              },
-              {
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                ),
-                title: "Trusted Partner",
-                description: "Built on integrity and transparency in every transaction.",
-              },
-              {
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                ),
-                title: "Expert Team",
-                description: "Seasoned professionals with deep industry knowledge.",
-              },
-              {
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                ),
-                title: "Proven Results",
-                description: "Track record of successful investments and satisfied clients.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="glass-card p-8 text-center group">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-emerald/20 flex items-center justify-center text-emerald group-hover:bg-emerald/30 transition-colors">
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-serif font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-gray-400 text-sm">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="snap-section py-20 sm:py-32 relative overflow-hidden flex items-center">
         {/* Background */}
         <div className="absolute inset-0">
           <div

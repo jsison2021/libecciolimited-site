@@ -86,7 +86,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden pt-20">
+      <section className="snap-section relative min-h-screen flex items-center overflow-hidden pt-20">
         {/* Background */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -102,24 +102,15 @@ export default function AboutPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
-            <div className="inline-block glass-emerald px-4 py-2 rounded-full mb-6">
-              <span className="text-white text-sm font-semibold tracking-wider uppercase">
-                Our Story
-              </span>
-            </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6">
-              About <span className="text-gradient">Libeccio</span>
-            </h1>
-            <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
-              Building Louisville&apos;s real estate future through strategic
-              vision, local expertise, and unwavering commitment to excellence.
-            </p>
+            <blockquote className="text-2xl md:text-3xl lg:text-4xl text-white font-serif italic leading-relaxed border-l-4 border-emerald pl-6">
+              &ldquo;We&apos;re here to build something that lasts—for our partners, our tenants, and Louisville.&rdquo;
+            </blockquote>
           </div>
         </div>
       </section>
 
       {/* Our Story */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="snap-section py-20 sm:py-32 relative overflow-hidden flex items-center">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-navy-dark/30"></div>
         <div className="glow-orb glow-orb-navy w-[500px] h-[500px] -bottom-40 -left-40 opacity-20"></div>
 
@@ -142,11 +133,6 @@ export default function AboutPage() {
                   strategic acquisition, thoughtful development, and professional
                   management.
                 </p>
-                <p>
-                  Named after the warm Mediterranean wind, Libeccio represents our
-                  approach to real estate—bringing fresh perspectives and positive
-                  change to every property we touch.
-                </p>
                 <p className="text-gray-400">
                   Our deep roots in Louisville give us an unparalleled
                   understanding of local markets, neighborhoods, and communities.
@@ -160,7 +146,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="glass-card overflow-hidden">
                 <div
-                  className="h-[500px] bg-cover bg-center relative"
+                  className="h-[350px] sm:h-[500px] bg-cover bg-center relative"
                   style={{
                     backgroundImage: `url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=2096&auto=format&fit=crop')`,
                   }}
@@ -168,9 +154,9 @@ export default function AboutPage() {
                   <div className="absolute inset-0 bg-navy-dark/40"></div>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-navy-dark/95 backdrop-blur-sm border border-emerald/50 p-6 rounded-2xl">
-                <div className="text-sm text-emerald mb-1">Founded in</div>
-                <div className="text-3xl font-bold text-white">Louisville, KY</div>
+              <div className="absolute -bottom-4 left-2 sm:-bottom-6 sm:-left-6 bg-navy-dark/95 backdrop-blur-sm border border-emerald/50 p-4 sm:p-6 rounded-2xl">
+                <div className="text-xs sm:text-sm text-emerald mb-1">Founded in</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white">Louisville, KY</div>
               </div>
             </div>
           </div>
@@ -178,10 +164,10 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="snap-section py-20 sm:py-32 relative overflow-hidden flex items-center">
         <div className="absolute inset-0">
           <div
-            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            className="absolute inset-0 bg-cover bg-center lg:bg-fixed"
             style={{
               backgroundImage: `url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop')`,
             }}
@@ -217,30 +203,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission Statement */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-dark/30 to-background"></div>
-        <div className="glow-orb glow-orb-emerald w-96 h-96 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20"></div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass-card p-12 md:p-16 text-center max-w-4xl mx-auto">
-            <div className="inline-block glass-emerald px-4 py-2 rounded-full mb-8">
-              <span className="text-white text-sm font-semibold tracking-wider uppercase">
-                Our Mission
-              </span>
-            </div>
-            <blockquote className="text-2xl md:text-3xl lg:text-4xl text-white font-serif italic leading-relaxed mb-8">
-              &ldquo;To create lasting value for our investors, tenants, and
-              communities through strategic real estate acquisition, thoughtful
-              development, and exceptional property management.&rdquo;
-            </blockquote>
-            <div className="w-24 h-1 bg-gradient-to-r from-emerald to-emerald-light mx-auto"></div>
-          </div>
-        </div>
-      </section>
-
       {/* Three Pillars Detailed */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="snap-section py-20 sm:py-32 relative overflow-hidden flex items-center">
         <div className="absolute inset-0 bg-background"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -300,7 +264,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="snap-section py-20 sm:py-32 relative overflow-hidden flex items-center">
         <div className="absolute inset-0 bg-gradient-to-t from-navy-dark to-background"></div>
         <div className="glow-orb glow-orb-emerald w-[500px] h-[500px] -bottom-40 right-0 opacity-20"></div>
 

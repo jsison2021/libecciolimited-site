@@ -54,7 +54,7 @@ const pillars = [
 
 export default function Pillars() {
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="snap-section py-20 sm:py-32 relative overflow-hidden flex items-center">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-navy-dark/50 to-background"></div>
 
@@ -64,7 +64,7 @@ export default function Pillars() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-20">
           <div className="inline-block glass px-4 py-2 rounded-full mb-6">
             <span className="text-emerald text-sm font-semibold tracking-wider uppercase">
               Our Process
@@ -81,13 +81,13 @@ export default function Pillars() {
         {/* Pillars Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {pillars.map((pillar, index) => (
-            <div key={pillar.title} className="group relative">
+            <div key={pillar.title} className="relative">
               {/* Card */}
               <div className="glass-card overflow-hidden h-full">
                 {/* Image Section */}
                 <div className="relative h-48 overflow-hidden">
                   <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url('${pillar.image}')` }}
                   ></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/50 to-transparent"></div>
@@ -106,40 +106,18 @@ export default function Pillars() {
                 </div>
 
                 {/* Content */}
-                <div className="p-8">
-                  <h3 className="text-2xl font-serif font-bold text-white mb-4 group-hover:text-emerald transition-colors">
+                <div className="p-6 sm:p-8">
+                  <h3 className="text-2xl font-serif font-bold text-white mb-4">
                     {pillar.title}
                   </h3>
                   <p className="text-gray-400 leading-relaxed">
                     {pillar.description}
                   </p>
-
-                  {/* Learn more link */}
-                  <div className="mt-6 flex items-center gap-2 text-emerald opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="text-sm font-semibold">Learn more</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
                 </div>
               </div>
-
-              {/* Connector arrows between cards (desktop only) */}
-              {index < pillars.length - 1 && (
-                <div className="hidden lg:flex absolute top-1/2 -right-4 transform -translate-y-1/2 z-20">
-                  <div className="w-8 h-8 rounded-full glass flex items-center justify-center">
-                    <svg className="w-4 h-4 text-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              )}
             </div>
           ))}
         </div>
-
-        {/* Process Flow Line (Desktop) */}
-        <div className="hidden lg:block absolute top-1/2 left-1/2 transform -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-emerald/30 to-transparent -z-10"></div>
       </div>
     </section>
   );

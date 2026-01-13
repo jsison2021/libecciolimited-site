@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,18 +18,25 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToTop = (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
         scrolled
           ? "glass-dark py-3"
-          : "bg-transparent py-5"
+          : "py-5"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <Link href="/" className="flex items-center group" onClick={scrollToTop}>
             <span className="text-2xl font-serif font-bold text-white transition-all group-hover:text-emerald">
               Libeccio
             </span>
@@ -41,6 +50,7 @@ export default function Header() {
             <Link
               href="/"
               className="relative px-5 py-2 text-white/80 hover:text-white font-medium transition-all group"
+              onClick={scrollToTop}
             >
               <span className="relative z-10">Home</span>
               <div className="absolute inset-0 rounded-lg bg-white/0 group-hover:bg-white/10 transition-all"></div>
@@ -101,7 +111,7 @@ export default function Header() {
             <Link
               href="/"
               className="block px-4 py-3 rounded-xl text-white/80 hover:text-white hover:bg-white/10 font-medium transition-all"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => { scrollToTop(e); setMobileMenuOpen(false); }}
             >
               Home
             </Link>

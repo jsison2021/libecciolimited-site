@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   title: "Libeccio Limited | Louisville Real Estate",
   description:
     "Libeccio Limited is a Louisville-based real estate company specializing in acquisition, development, and management of properties.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 export default function RootLayout({

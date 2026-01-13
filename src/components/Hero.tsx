@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="snap-section relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -29,12 +29,6 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="z-10">
-            <div className="inline-block glass-emerald px-4 py-2 rounded-full mb-6">
-              <span className="text-emerald-light text-sm font-semibold tracking-wider uppercase">
-                Louisville Real Estate
-              </span>
-            </div>
-
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight">
               Building
               <span className="text-gradient block text-glow">Tomorrow&apos;s</span>
@@ -62,7 +56,7 @@ export default function Hero() {
                 <div className="text-gray-400 text-sm mt-1">Years Experience</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-gradient">$50M+</div>
+                <div className="text-3xl md:text-4xl font-bold text-gradient">$10M+</div>
                 <div className="text-gray-400 text-sm mt-1">Assets Managed</div>
               </div>
               <div>
@@ -120,8 +114,6 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Shimmer effect */}
-              <div className="absolute inset-0 rounded-3xl animate-shimmer pointer-events-none"></div>
             </div>
 
             {/* Decorative elements behind card */}
