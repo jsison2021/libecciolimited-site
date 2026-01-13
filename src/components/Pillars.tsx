@@ -65,11 +65,6 @@ export default function Pillars() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-20">
-          <div className="inline-block glass px-4 py-2 rounded-full mb-6">
-            <span className="text-emerald text-sm font-semibold tracking-wider uppercase">
-              Our Process
-            </span>
-          </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
             A Proven <span className="text-gradient">Approach</span>
           </h2>

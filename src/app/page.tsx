@@ -45,12 +45,6 @@ export default function Home() {
 
             {/* Content */}
             <div className="order-1 lg:order-2">
-              <div className="inline-block glass px-4 py-2 rounded-full mb-6">
-                <span className="text-emerald text-sm font-semibold tracking-wider uppercase">
-                  Our Home
-                </span>
-              </div>
-
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
                 Rooted in <span className="text-gradient">Louisville</span>
               </h2>

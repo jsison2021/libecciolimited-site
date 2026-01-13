@@ -237,15 +237,9 @@ export default function AboutPage() {
                       {pillar.title}
                     </h3>
                   </div>
-                  <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                  <p className="text-lg text-gray-300 leading-relaxed">
                     {pillar.description}
                   </p>
-                  <div className="glass p-6 rounded-2xl inline-flex items-center gap-4">
-                    <div className="text-emerald">{pillar.icon}</div>
-                    <span className="text-gray-300">
-                      Excellence in {pillar.title.toLowerCase()}
-                    </span>
-                  </div>
                 </div>
 
                 {/* Image */}

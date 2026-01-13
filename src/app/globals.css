@@ -31,8 +31,11 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-snap-type: y proximity;
+/* Disable snap scroll on mobile for smoother touch scrolling */
+@media (min-width: 768px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
 }
 
 body {
@@ -204,11 +207,18 @@ body {
 .btn-emerald {
   background: var(--emerald);
   color: var(--navy-dark);
-  padding: 16px 32px;
-  border-radius: 12px;
+  padding: 12px 24px;
+  border-radius: 10px;
   font-weight: 700;
   border: none;
   transition: background 0.2s ease, transform 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .btn-emerald {
+    padding: 16px 32px;
+    border-radius: 12px;
+  }
 }
 
 .btn-emerald:hover {
