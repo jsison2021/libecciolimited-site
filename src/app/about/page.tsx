@@ -102,9 +102,13 @@ export default function AboutPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
-            <blockquote className="text-2xl md:text-3xl lg:text-4xl text-white font-serif italic leading-relaxed border-l-4 border-emerald pl-6">
-              &ldquo;We&apos;re here to build something that lasts—for our partners, our tenants, and Louisville.&rdquo;
-            </blockquote>
+            <div className="space-y-6 text-xl md:text-2xl lg:text-3xl text-white font-serif italic leading-relaxed border-l-4 border-emerald pl-6">
+              <p>Preserving our collective architectural past for our shared successful future.</p>
+              <p className="text-gray-300">Recognizing the physical DNA that comprises a city is the buildings and their people.</p>
+              <p className="text-gray-300">Securing our city&apos;s physical infrastructure and saving Place for our people and guests.</p>
+              <p className="text-gray-300">Welcoming visitors, and earning their residence welcoming them to become part of our community.</p>
+              <p className="text-emerald not-italic font-sans font-semibold text-lg md:text-xl">Welcome Home to Louisville, Kentucky.</p>
+            </div>
           </div>
         </div>
       </section>

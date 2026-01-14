@@ -29,40 +29,18 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="z-10">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight">
-              Building
-              <span className="text-gradient block text-glow">Tomorrow&apos;s</span>
-              Legacy Today
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-10 leading-tight">
+              <span className="text-gradient text-glow">Preserving Place.</span>
+              <span className="block">Building Community.</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-xl">
-              Strategic acquisition. Thoughtful development. Expert management.
-              Transforming Louisville&apos;s real estate landscape.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="btn-emerald text-lg text-center">
-                Start a Conversation
-              </Link>
-              <Link href="/about" className="btn-glass text-lg text-center">
-                Discover Our Approach
-              </Link>
-            </div>
+            <Link href="/about" className="btn-emerald text-lg text-center inline-block">
+              Discover Our Approach
+            </Link>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-16 pt-8 border-t border-white/10">
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-gradient">10+</div>
-                <div className="text-gray-400 text-sm mt-1">Years Experience</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-gradient">$10M+</div>
-                <div className="text-gray-400 text-sm mt-1">Assets Managed</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-gradient">100%</div>
-                <div className="text-gray-400 text-sm mt-1">Client Focused</div>
-              </div>
+            <div className="mt-16 pt-8 border-t border-white/10">
+              <div className="text-3xl md:text-4xl font-bold text-gradient">Since 1880</div>
             </div>
           </div>
 
