@@ -1,53 +1,72 @@
 import Link from "next/link";
 
+const year = new Date().getFullYear();
+
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-navy-dark"></div>
-      <div className="glow-orb glow-orb-emerald w-96 h-96 -bottom-40 -left-40 opacity-10"></div>
-
-      <div className="relative">
-        {/* Main Footer */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="flex flex-col items-center text-center">
-            {/* Company Info */}
-            <Link href="/" className="inline-block mb-6">
-              <span className="text-3xl font-serif font-bold text-white">
-                Libeccio
-              </span>
-              <span className="text-3xl font-serif font-bold text-gradient">
-                Limited
-              </span>
+    <footer className="border-t border-line bg-bg-alt">
+      <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
+          {/* Brand */}
+          <div className="md:col-span-5">
+            <Link
+              href="/"
+              className="font-display text-3xl font-semibold tracking-tight text-ink"
+            >
+              Libeccio<span className="text-accent">.</span>
             </Link>
-            <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
-              Louisville&apos;s trusted partner in real estate acquisition,
-              development, and management. Building tomorrow&apos;s legacy today.
+            <p className="mt-6 max-w-sm text-ink-soft leading-relaxed">
+              A Louisville real estate company curating a portfolio of
+              distinctive properties — through disciplined acquisition,
+              considered development, and attentive management.
             </p>
-            <div className="flex items-center gap-3 text-gray-400">
-              <svg className="w-5 h-5 text-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <span>Louisville, Kentucky</span>
-            </div>
+          </div>
+
+          {/* Explore */}
+          <div className="md:col-span-3">
+            <p className="label text-ink-soft">Explore</p>
+            <ul className="mt-6 space-y-3">
+              {[
+                { href: "/properties", label: "Portfolio" },
+                { href: "/about", label: "About" },
+                { href: "/contact", label: "Contact" },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="link-underline text-ink hover:text-accent"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="md:col-span-4">
+            <p className="label text-ink-soft">Get in Touch</p>
+            <address className="mt-6 space-y-3 not-italic text-ink">
+              <p>Louisville, Kentucky</p>
+              <p>
+                <Link
+                  href="/contact"
+                  className="link-underline hover:text-accent"
+                >
+                  Send us a message →
+                </Link>
+              </p>
+            </address>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-500 text-sm">
-                &copy; {currentYear} Libeccio Limited. All rights reserved.
-              </p>
-              <div className="flex items-center gap-6 text-sm text-gray-500">
-                <span>Privacy Policy</span>
-                <span>Terms of Service</span>
-              </div>
-            </div>
+        <div className="rule mt-16" />
+
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 text-sm text-ink-soft md:flex-row">
+          <p>© {year} Libeccio Limited. All rights reserved.</p>
+          <div className="flex gap-8">
+            <span className="cursor-default">Privacy Policy</span>
+            <span className="cursor-default">Terms of Service</span>
           </div>
         </div>
       </div>

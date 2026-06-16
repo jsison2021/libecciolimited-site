@@ -1,162 +1,115 @@
-"use client";
+import type { Metadata } from "next";
+import Image from "next/image";
+import ContactForm from "@/components/ContactForm";
 
-import { useState } from "react";
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Libeccio Limited to discuss buying, leasing, selling, or partnering on Louisville real estate.",
+};
+
+type Detail = {
+  label: string;
+  lines: string[];
+  href?: string;
+  placeholder?: boolean;
+};
+
+// Real contact details are not yet provided. Fill these in (and set `href`)
+// when available; placeholder entries render as muted, non-clickable text.
+const details: Detail[] = [
+  {
+    label: "Location",
+    lines: ["Louisville, Kentucky"],
+  },
+  {
+    label: "Email",
+    lines: ["To be added"],
+    placeholder: true,
+  },
+  {
+    label: "Telephone",
+    lines: ["To be added"],
+    placeholder: true,
+  },
+];
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <>
-      {/* Page Header */}
-      <section className="relative min-h-[50vh] flex items-center overflow-hidden pt-20">
-        {/* Background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')`,
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/95 to-navy-dark/80"></div>
-        </div>
-
-        {/* Decorative */}
-        <div className="glow-orb glow-orb-emerald w-96 h-96 -bottom-20 right-0 opacity-20"></div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-6xl font-serif font-bold text-white mb-6">
-              Let&apos;s <span className="text-gradient">Connect</span>
-            </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Ready to discuss your real estate goals? We&apos;d love to hear from you.
-            </p>
-          </div>
+      {/* Header */}
+      <section className="relative flex h-[55vh] min-h-[380px] items-end overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1582407947304-fd86f028f716"
+          alt="A Libeccio interior"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/30" />
+        <div className="relative mx-auto w-full max-w-7xl px-6 pb-14 text-white lg:px-10">
+          <p className="label text-white/80">Contact</p>
+          <h1 className="mt-4 max-w-2xl font-display text-5xl font-medium leading-tight sm:text-6xl">
+            Let&apos;s begin a conversation.
+          </h1>
         </div>
       </section>
 
-      {/* Contact Content */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background to-navy-dark/20"></div>
-        <div className="glow-orb glow-orb-navy w-[500px] h-[500px] top-1/2 -left-40 opacity-10"></div>
-
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div>
-            {/* Contact Form */}
-            <div>
-              <div className="glass-card p-8 md:p-10">
-                <h2 className="text-2xl font-serif font-bold text-white mb-8">
-                  Send Us a Message
-                </h2>
-
-                {submitted ? (
-                  <div className="glass-emerald rounded-2xl p-10 text-center">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-white/20 flex items-center justify-center">
-                      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <h3 className="text-2xl font-serif font-bold text-white mb-3">
-                      Message Sent!
-                    </h3>
-                    <p className="text-white/80">
-                      Thank you for reaching out. We&apos;ll be in touch shortly.
-                    </p>
+      {/* Body */}
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-20">
+          {/* Details */}
+          <div className="lg:col-span-4">
+            <p className="label text-accent">Reach Us</p>
+            <p className="mt-6 leading-relaxed text-ink-soft">
+              Whether you&apos;re exploring a purchase, a lease, or a
+              partnership, we read every message and respond personally.
+            </p>
+            <div className="mt-12 space-y-10">
+              {details.map((d) => (
+                <div key={d.label}>
+                  <p className="label text-ink-soft">{d.label}</p>
+                  <div className="mt-3 space-y-1">
+                    {d.lines.map((line) =>
+                      d.href ? (
+                        <a
+                          key={line}
+                          href={d.href}
+                          className="link-underline block text-ink hover:text-accent"
+                        >
+                          {line}
+                        </a>
+                      ) : (
+                        <p
+                          key={line}
+                          className={
+                            d.placeholder
+                              ? "italic text-ink-soft/60"
+                              : "text-ink"
+                          }
+                        >
+                          {line}
+                        </p>
+                      )
+                    )}
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:border-emerald focus:ring-1 focus:ring-emerald outline-none transition-all"
-                        placeholder="Your full name"
-                      />
-                    </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                          Email Address
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:border-emerald focus:ring-1 focus:ring-emerald outline-none transition-all"
-                          placeholder="you@example.com"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-                          Phone Number
-                        </label>
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:border-emerald focus:ring-1 focus:ring-emerald outline-none transition-all"
-                          placeholder="(502) 555-0123"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                        Message
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        required
-                        rows={5}
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:border-emerald focus:ring-1 focus:ring-emerald outline-none transition-all resize-none"
-                        placeholder="Tell us about your real estate goals..."
-                      ></textarea>
-                    </div>
-
-                    <button type="submit" className="w-full btn-emerald text-lg py-4">
-                      Send Message
-                    </button>
-                  </form>
-                )}
+          {/* Form */}
+          <div className="lg:col-span-8">
+            <div className="border border-line bg-bg-alt/40 p-8 sm:p-12">
+              <h2 className="font-display text-3xl font-semibold text-ink">
+                Send a message
+              </h2>
+              <p className="mt-2 text-ink-soft">
+                Fields marked are required. We&apos;ll never share your details.
+              </p>
+              <div className="mt-10">
+                <ContactForm />
               </div>
             </div>
           </div>

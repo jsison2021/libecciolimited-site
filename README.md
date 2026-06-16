@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Libeccio Limited
+
+Marketing and portfolio site for Libeccio Limited, a Louisville, Kentucky real estate company specializing in the acquisition, development, and management of distinctive properties.
+
+## Stack
+
+- **Next.js 16** (App Router) + **React 19** with the React Compiler
+- **Tailwind CSS v4** (CSS-first config in `src/app/globals.css`)
+- **TypeScript** (strict)
+- Fonts: Cormorant Garamond (display) + Inter (body) via `next/font`
+- Imagery via `next/image` (remote Unsplash placeholders — see "Content")
+- Deployed on **Netlify** (`@netlify/plugin-nextjs`)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+  app/
+    page.tsx                 Home
+    properties/page.tsx      Portfolio listing (filterable)
+    properties/[slug]/       Individual property detail (statically generated)
+    about/page.tsx
+    contact/page.tsx
+    not-found.tsx
+    globals.css              Design tokens + utilities
+    layout.tsx               Fonts, header/footer shell, metadata
+  components/
+    Header.tsx               Fixed nav (transparent over hero, solid on scroll)
+    Footer.tsx
+    PropertyCard.tsx
+    PortfolioGrid.tsx        Client-side status filtering
+    ContactForm.tsx          Client form (no backend yet)
+  lib/
+    properties.ts            Property data model + content
+```
 
-## Learn More
+## Content
 
-To learn more about Next.js, take a look at the following resources:
+Properties live in `src/lib/properties.ts`. The `properties` array is **empty by
+default** — no placeholder listings. While it is empty, the portfolio and home
+page automatically show a "coming soon" state. Add real entries following the
+documented shape in that file (each becomes a statically generated detail page).
+To serve images from a new host, add its hostname to `images.remotePatterns` in
+`next.config.ts`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Company contact details (email, phone) are intentionally left as **placeholders**
+in `src/app/contact/page.tsx` and the footer — replace them with real values when
+available. The contact form currently logs submissions to the console and shows a
+confirmation state; wire it to an email service or API route before launch.
