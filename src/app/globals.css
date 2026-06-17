@@ -52,6 +52,11 @@ body {
   font-weight: 500;
 }
 
+/* Lifts hero copy off bright background imagery */
+.text-shadow-hero {
+  text-shadow: 0 1px 28px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
 .link-underline {
   background-image: linear-gradient(currentColor, currentColor);
   background-position: 0 100%;

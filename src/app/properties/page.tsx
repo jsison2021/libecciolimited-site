@@ -22,8 +22,8 @@ export default function PropertiesPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-black/30" />
-        <div className="relative mx-auto w-full max-w-7xl px-6 pb-16 text-white lg:px-10">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/30" />
+        <div className="relative mx-auto w-full max-w-7xl px-6 pb-16 text-white text-shadow-hero lg:px-10">
           <p className="label text-white/80">The Portfolio</p>
           <h1 className="mt-4 max-w-2xl font-display text-5xl font-medium leading-tight sm:text-6xl">
             Properties across Louisville

@@ -74,8 +74,8 @@ export default async function PropertyPage({
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30" />
-        <div className="relative mx-auto w-full max-w-7xl px-6 pb-14 text-white lg:px-10">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/30" />
+        <div className="relative mx-auto w-full max-w-7xl px-6 pb-14 text-white text-shadow-hero lg:px-10">
           <span className="bg-bg/90 px-3 py-1.5 text-[0.68rem] font-medium uppercase tracking-[0.18em] text-ink">
             {property.status}
           </span>
