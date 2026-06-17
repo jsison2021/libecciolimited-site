@@ -1,18 +1,18 @@
-// Downtown Louisville imagery (Wikimedia Commons, freely licensed).
-// Swap these URLs to change the site's hero/section photography in one place.
-// Any new host must also be added to `images.remotePatterns` in next.config.ts.
+// Downtown Louisville imagery, self-hosted in /public/images so it always
+// loads (no dependency on an external host). Source files and licensing are
+// documented in CREDITS.md. Swap these paths to change the site's photography.
 
 export const louisville = {
   skylineNight: {
-    src: "https://upload.wikimedia.org/wikipedia/commons/5/55/Louisville_Skyline_2021_%283%29.jpg",
+    src: "/images/louisville-skyline-night.jpg",
     alt: "Downtown Louisville skyline at night, reflected in the Ohio River",
   },
   skylineDusk: {
-    src: "https://upload.wikimedia.org/wikipedia/commons/1/16/Louisville_Skyline.jpg",
+    src: "/images/louisville-skyline-dusk.jpg",
     alt: "Downtown Louisville skyline at dusk over the Ohio River",
   },
   oldLouisville: {
-    src: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Werne%27s_Row_4th_and_Hill%2C_Old_Louisville.jpg",
+    src: "/images/old-louisville-rowhouses.jpg",
     alt: "Historic Victorian rowhouses in Old Louisville, Kentucky",
   },
 } as const;
