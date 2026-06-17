@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
+import { louisville } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -40,8 +41,8 @@ export default function ContactPage() {
       {/* Header */}
       <section className="relative flex h-[55vh] min-h-[380px] items-end overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1582407947304-fd86f028f716"
-          alt="A Libeccio interior"
+          src={louisville.skylineDusk.src}
+          alt={louisville.skylineDusk.alt}
           fill
           priority
           sizes="100vw"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { louisville } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "About",
@@ -40,8 +41,8 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative flex h-[70vh] min-h-[480px] items-end overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000"
-          alt="Louisville at street level"
+          src={louisville.skylineDusk.src}
+          alt={louisville.skylineDusk.alt}
           fill
           priority
           sizes="100vw"
@@ -81,8 +82,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="img-zoom relative aspect-[4/5] bg-bg">
               <Image
-                src="https://images.unsplash.com/photo-1582407947304-fd86f028f716"
-                alt="Interior of a restored Louisville property"
+                src={louisville.oldLouisville.src}
+                alt={louisville.oldLouisville.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -143,8 +144,8 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="relative overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1568605114967-8130f3a36994"
-          alt="A Louisville residence"
+          src={louisville.skylineNight.src}
+          alt={louisville.skylineNight.alt}
           fill
           sizes="100vw"
           className="object-cover"

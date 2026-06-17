@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PropertyCard from "@/components/PropertyCard";
 import { getFeatured } from "@/lib/properties";
+import { louisville } from "@/lib/images";
 
 const approach = [
   {
@@ -29,14 +30,14 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section className="relative flex min-h-screen items-end overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1568605114967-8130f3a36994"
-          alt="A distinctive Louisville residence"
+          src={louisville.skylineNight.src}
+          alt={louisville.skylineNight.alt}
           fill
           priority
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/50" />
 
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 lg:px-10 lg:pb-28">
           <div className="fade-up max-w-3xl text-white">
@@ -169,8 +170,8 @@ export default function Home() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="img-zoom relative aspect-[4/3] bg-bg-alt">
             <Image
-              src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000"
-              alt="The streets of Louisville, Kentucky"
+              src={louisville.oldLouisville.src}
+              alt={louisville.oldLouisville.alt}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -209,8 +210,8 @@ export default function Home() {
       {/* ===== CTA ===== */}
       <section className="relative overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"
-          alt="A Louisville building at dusk"
+          src={louisville.skylineDusk.src}
+          alt={louisville.skylineDusk.alt}
           fill
           sizes="100vw"
           className="object-cover"

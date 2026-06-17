@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import PortfolioGrid from "@/components/PortfolioGrid";
+import { louisville } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -14,8 +15,8 @@ export default function PropertiesPage() {
       {/* Header */}
       <section className="relative flex h-[60vh] min-h-[420px] items-end overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"
-          alt="Louisville architecture"
+          src={louisville.skylineNight.src}
+          alt={louisville.skylineNight.alt}
           fill
           priority
           sizes="100vw"
